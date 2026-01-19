@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* メインの画像をグリッドの配置にする（ここから） */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+}
+/* メインの画像をグリッドの配置にする（ここまで） */
+
+/* wrapperで表示サイズを調整する（ここから） */
+.wrapper {
+    width: 100vw;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.product-list img {
+    width: 100%;
+}
+.product-list {
+    list-style: none;
+}
+/* wrapperで表示サイズを調整する（ここまで） */
+
+/* headerとfooterを横並びにする（ここから） */
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+#footer .menu{
+    display: flex;
+    list-style: none;
+}
+.menu li {
+    margin-right: 15px;
+}
+/* headerとfooterを横並びにする（ここまで）*/
