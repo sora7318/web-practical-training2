@@ -55,12 +55,12 @@ a {
     }
 }
     .product-list p {
-        font-size: 0,8;
+        font-size: 0,8rem;
 
         line-height: 1.4;
         margin-top: 6px;
     }
-    .size-title img {
+    .site-title img {
         height: 24px;
         width: auto;
     }
