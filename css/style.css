@@ -16,8 +16,9 @@ a {
 .wrapper {
     width: 100vw;
     max-width: 1360px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     padding: 0 40px;
+    margin-bottom: 30px;
 }
 .product-list img {
     width: 100%;
@@ -54,9 +55,10 @@ a {
         gap: 20px;
     }
 }
+/*スマホ時　プロダクトタイトルを小さくする*/
     .product-list p {
         font-size: 0,8rem;
-
+        /*タイトル文字をスマホ時少し小さくする*/
         line-height: 1.4;
         margin-top: 6px;
     }
@@ -64,3 +66,45 @@ a {
         height: 24px;
         width: auto;
     }
+    .link-text {
+        margin-top: 40px;
+    }
+    /*プロダクトタイトル*/
+    .page-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+
+    .item {
+    display: flex;
+    max-width: 800px;
+    justify-content: space-between;
+
+    }
+    .item .item-img {
+        width: 42%;
+    }
+
+    .item .item-text {
+        width: 50%;
+    }
+    .item .item-img img {
+        width: 100%;
+        
+    }
+
+    .item .item-text p {
+        margin-bottom: 20px;
+    }
+
+    /*テーブルの編集*/
+    .item table th {
+        text-align: left;
+        font-weight: normal;
+    }
+
+    .item table td {
+        padding-left:  1rem;
+    }
+
