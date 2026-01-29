@@ -64,8 +64,11 @@ a {
     justify-content: space-between;
 
     }
-    .item .item-img {
+    .item-img {
         width: 42%;
+    }
+    .item-img img {
+        width: 100%;
     }
 
     .item .item-text {
@@ -89,6 +92,7 @@ a {
     .item table td {
         padding-left:  1rem;
     }
+    /*テーブルの編集*/
 
 /*レスポンシブ対応デザイン*/
 @media  (max-width: 600px){
@@ -112,7 +116,7 @@ a {
         flex-direction: column;
     }
     .item .item-img,
-    .ite, .item-text {
+    .item .item-text {
         width: 100%;
     }
 }
