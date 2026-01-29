@@ -107,7 +107,7 @@ a {
     #company .info th,
     #company .info td {
         font-weight: normal;
-        border-bottom:  1px solid #dcdbdd;
+        border-bottom:  1px solid #dedbdb;
         padding: 20px 10px;
     }
  /* 右の項目 */
@@ -133,6 +133,7 @@ a {
         width: 100%;
         height: 300px;
     }
+
 /*レスポンシブ対応デザイン*/
 @media  (max-width: 600px){
     .product-list {
@@ -158,4 +159,41 @@ a {
     .item .item-text {
         width: 100%;
     }
+    
+    /* ここまでアイテムのデザイン */
+        /* ここからcompanyのデザイン */
+        #company .info th,
+        #company .info td {
+            display: block;
+            /* trやtdをただのdivと同じように扱う */
+            width: 100%;
+            border-bottom: none;
+            /* thとtdの下の線を消す */
+            padding: 0 10px;
+            /* 上と下の余白は消して、左右は10pxにする */
+        }
+
+            
+        #company.info tr {
+            display: block;
+            /* ただのdivと同じように扱う */
+            border-bottom: 1px solid #dedbdb;
+            padding: 10px 0;
+            /* 上下の余白10px */
+        }
+                        
+        #company .info th {
+            padding-bottom: 5px;
+            /* 下の余白5px */
+        }
+        #company .info tr {
+            padding-top: 5px;
+            /* 上の余白5px */
+        }
+        #company .info tr:last-child {
+            border-bottom: none;
+            /* 一番下の線を引かない */
+        }
+        /* ここまでcompanyのデザイン */
+
 }
