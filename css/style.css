@@ -92,8 +92,47 @@ a {
     .item table td {
         padding-left:  1rem;
     }
+
     /*テーブルの編集*/
 
+    #company {
+        max-width: 600px;
+    }
+    #company .info {
+        width: 100%;
+        border-collapse: collapse;
+        /* テーブルの隙間を実線にする */
+        margin-bottom: 20px;
+    }
+    #company .info th,
+    #company .info td {
+        font-weight: normal;
+        border-bottom:  1px solid #dcdbdd;
+        padding: 20px 10px;
+    }
+ /* 右の項目 */
+    #company .info th {
+        width: 30%;
+        text-align: left;
+    }
+    /* 右の項目 */
+    #company .info td {
+        width: 70%;
+    }
+/* 最後のだけ下線を消す */
+    #company .info tr:last-child th,
+    #company .info tr:last-child td {
+        border-bottom: none;
+    }
+    /* google Map */
+    #company .map {
+        filter: grayscale(1);
+        margin-bottom: 100px;
+    }
+    #company .map iframe {
+        width: 100%;
+        height: 300px;
+    }
 /*レスポンシブ対応デザイン*/
 @media  (max-width: 600px){
     .product-list {
