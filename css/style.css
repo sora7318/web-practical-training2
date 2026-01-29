@@ -16,9 +16,9 @@ a {
 .wrapper {
     width: 100vw;
     max-width: 1360px;
-    margin: 0 auto 30px;
+    margin: 0 auto ;
     padding: 0 40px;
-    margin-bottom: 30px;
+    
 }
 .product-list img {
     width: 100%;
@@ -96,8 +96,7 @@ a {
         grid-template-columns: repeat(2,1fr);
         gap: 20px;
     }
-}
-/*スマホ時　プロダクトタイトルを小さくする*/
+    /*スマホ時　プロダクトタイトルを小さくする*/
     .product-list p {
         font-size: 0,8rem;
         /*タイトル文字をスマホ時少し小さくする*/
@@ -116,3 +115,4 @@ a {
     .ite, .item-text {
         width: 100%;
     }
+}
