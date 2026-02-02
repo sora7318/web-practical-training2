@@ -18,9 +18,32 @@
             <h1 class="site-title">
                 <a href="index.html"><img src="img/logo.svg" alt="Furniture Design"></a>
             </h1>
-            <navi>
-                三
-            </navi>
+            <div class="nav" id="navi">三</div>
+                
+            <nav class="menu" id="menu">
+                <div class="close-Btn" id="close">x</div>
+                <li><a href="#">about</a></li>
+                <li><a href="company.html">company</a></li>
+                <li><a href="#">products</a></li>
+                <li><a href="#">products2</a></li>
+            </nav>
+            
+        
+<script>
+  const navi = document.getElementById('navi');
+  const menu = document.getElementById('menu');
+  const closeBtn = document.getElementById('close'); // ← 変数名を統一
+
+  // 開く
+  navi.addEventListener('click', () => {
+    menu.classList.add('active');
+  });
+
+  // 閉じる
+  closeBtn.addEventListener('click', () => {
+    menu.classList.remove('active');
+  });
+</script>
         </header>
         <main>
             <div id="top" class="wrapper">

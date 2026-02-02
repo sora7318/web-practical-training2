@@ -174,10 +174,10 @@ a {
         }
 
             
-        #company.info tr {
+        #company .info tr {
             display: block;
             /* ただのdivと同じように扱う */
-            border-bottom: 1px solid #dedbdb;
+            border-bottom: 1px solid #dcdbdb;
             padding: 10px 0;
             /* 上下の余白10px */
         }
@@ -195,5 +195,72 @@ a {
             /* 一番下の線を引かない */
         }
         /* ここまでcompanyのデザイン */
-
 }
+
+/* 「三」ボタン */
+#navi {
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+}
+
+/* メニュー（初期は左に隠す） */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -70%;   /* ← 左に隠す */
+  width: 20%;
+  height: 100vh;
+  background:#dcdbdb ;
+  padding: 100px 30px;
+  transition: 0.4s ease;  /* ← スライドアニメーション */
+}
+
+/* メニューが開いたとき */
+.menu.active {
+  left: 0;      /* ← 左から出てくる */
+}
+
+/* リストの基本 */
+.menu li {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.menu a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.close-Btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* --- メニュー項目のふわっとアニメーション --- */
+
+/* 初期状態（非表示） */
+.menu li {
+  opacity: 0;
+  transform: translateX(-25px);
+  transition: 0.8s ease-out;
+}
+
+/* メニューが開いたときに表示 */
+.menu.active li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 順番にゆっくり表示（ディレイ） */
+.menu.active li:nth-child(1) { transition-delay: 0.2s; }
+.menu.active li:nth-child(2) { transition-delay: 0.4s; }
+.menu.active li:nth-child(3) { transition-delay: 0.6s; }
+.menu.active li:nth-child(4) { transition-delay: 0.8s; }
