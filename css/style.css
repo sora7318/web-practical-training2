@@ -134,68 +134,28 @@ a {
         height: 300px;
     }
 
-/*レスポンシブ対応デザイン*/
-@media  (max-width: 600px){
-    .product-list {
-        grid-template-columns: repeat(2,1fr);
-        gap: 20px;
-    }
-    /*スマホ時　プロダクトタイトルを小さくする*/
-    .product-list p {
-        font-size: 0,8rem;
-        /*タイトル文字をスマホ時少し小さくする*/
-        line-height: 1.4;
-        margin-top: 6px;
-    }
-    .site-title img {
-        height: 24px;
-        width: auto;
-    }
+/* CONTACT*/
 
-    .item {
-        flex-direction: column;
-    }
-    .item .item-img,
-    .item .item-text {
-        width: 100%;
-    }
-    
-    /* ここまでアイテムのデザイン */
-        /* ここからcompanyのデザイン */
-        #company .info th,
-        #company .info td {
-            display: block;
-            /* trやtdをただのdivと同じように扱う */
-            width: 100%;
-            border-bottom: none;
-            /* thとtdの下の線を消す */
-            padding: 0 10px;
-            /* 上と下の余白は消して、左右は10pxにする */
-        }
-
-            
-        #company .info tr {
-            display: block;
-            /* ただのdivと同じように扱う */
-            border-bottom: 1px solid #dcdbdb;
-            padding: 10px 0;
-            /* 上下の余白10px */
-        }
-                        
-        #company .info th {
-            padding-bottom: 5px;
-            /* 下の余白5px */
-        }
-        #company .info tr {
-            padding-top: 5px;
-            /* 上の余白5px */
-        }
-        #company .info tr:last-child {
-            border-bottom: none;
-            /* 一番下の線を引かない */
-        }
-        /* ここまでcompanyのデザイン */
+#contact-form{
+    max-width: 600px;
 }
+#contact-form input, 
+#contact-form select, 
+#contact-form textarea, 
+#contact-form button {
+    width: 100%;
+    border: 1px solid #dcdbdb;
+    padding: 10px;
+}
+/* contact-form 内のチェックボックスとラジオボタン専用の調整 */
+#contact-form input[type="checkbox"],
+#contact-form input[type="radio"] {
+  width: auto;
+  padding: 0 ;
+  border: 0;
+  
+}
+
 
 /* 「三」ボタン */
 #navi {
@@ -264,3 +224,66 @@ a {
 .menu.active li:nth-child(2) { transition-delay: 0.4s; }
 .menu.active li:nth-child(3) { transition-delay: 0.6s; }
 .menu.active li:nth-child(4) { transition-delay: 0.8s; }
+/*レスポンシブ対応デザイン*/
+@media  (max-width: 600px){
+    .product-list {
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+    }
+    /*スマホ時　プロダクトタイトルを小さくする*/
+    .product-list p {
+        font-size: 0,8rem;
+        /*タイトル文字をスマホ時少し小さくする*/
+        line-height: 1.4;
+        margin-top: 6px;
+    }
+    .site-title img {
+        height: 24px;
+        width: auto;
+    }
+
+    .item {
+        flex-direction: column;
+    }
+    .item .item-img,
+    .item .item-text {
+        width: 100%;
+    }
+    
+    /* ここまでアイテムのデザイン */
+        /* ここからcompanyのデザイン */
+        #company .info th,
+        #company .info td {
+            display: block;
+            /* trやtdをただのdivと同じように扱う */
+            width: 100%;
+            border-bottom: none;
+            /* thとtdの下の線を消す */
+            padding: 0 10px;
+            /* 上と下の余白は消して、左右は10pxにする */
+        }
+
+            
+        #company .info tr {
+            display: block;
+            /* ただのdivと同じように扱う */
+            border-bottom: 1px solid #dcdbdb;
+            padding: 10px 0;
+            /* 上下の余白10px */
+        }
+                        
+        #company .info th {
+            padding-bottom: 5px;
+            /* 下の余白5px */
+        }
+        #company .info tr {
+            padding-top: 5px;
+            /* 上の余白5px */
+        }
+        #company .info tr:last-child {
+            border-bottom: none;
+            /* 一番下の線を引かない */
+        }
+        /* ここまでcompanyのデザイン */
+}
+
