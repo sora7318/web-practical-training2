@@ -5,69 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>好きなキャラ紹介</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-        <!-- ブラウザによってCSSがずれないようにするためのもの -->
-        <link rel="stylesheet" href="css/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body class="body-2">
+    
+           <header id="header" class="wrapper">
+            
+            <div class="nav" id="navi">三</div>
+                
+            <nav class="menu" id="menu">
+                <div class="close-Btn" id="close">x</div>
+                <li><a href="about.html">about</a></li>
+                <li><a href="company.html">company</a></li>
+                <li><a href="products.html">products</a></li>
+                <li><a href="products2.html">products2</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </nav>
+            
+        
+<script>
+  const navi = document.getElementById('navi');
+  const menu = document.getElementById('menu');
+  const closeBtn = document.getElementById('close'); // ← 変数名を統一
 
-    <header class="header-2">
-        <h1 class="site-title-2">CHARACTER INFO</h1>
-    </header>
+  // 開く
+  navi.addEventListener('click', () => {
+    menu.classList.add('active');
+  });
 
-    <main class="wrapper-2">
+  // 閉じる
+  closeBtn.addEventListener('click', () => {
+    menu.classList.remove('active');
+  });
+</script>
+        </header>
 
-        <!-- キャラ画像 -->
-        <section class="char-visual">
-            <img class="char-width" 
-                 src="https://img.game8.jp/8099029/ce324159cacf42fd7b54d3aa7c48e767.png/original" 
-                 alt="キャラ画像">
-        </section>
+<header class="header-2">
+    <h1 class="site-title-2">原神で好きなキャラ</h1>
+</header>
 
-        <!-- 基本情報 -->
-        <section class="char-info">
-            <h2>ナヒーダの情報</h2>
+<!-- ナヒーダ -->
+<div class="char-block grass">
 
-            <div class="info-grid-2">
-                <div class="info-item-2"><span>元素：</span>草</div>
-                <div class="info-item-2"><span>武器：</span>法器</div>
-                <div class="info-item-2"><span>モチーフ武器：</span>〇〇〇〇</div>
-                <div class="info-item-2"><span>入手方法：</span>限定ガチャ</div>
-                <div class="info-item-2"><span>声優：</span>〇〇〇〇</div>
-                <div class="info-item-2"><span>誕生日：</span>12月18日</div>
-                <div class="info-item-2"><span>オリジナル料理：</span>〇〇〇〇</div>
-            </div>
-        </section>
+    <section class="char-visual">
+        <img class="char-width"
+             src="https://img.game8.jp/8099029/ce324159cacf42fd7b54d3aa7c48e767.png/original"
+             alt="キャラ画像">
+    </section>
 
-        <!-- ステータス -->
-        <section class="char-status">
-            <h2>ステータス</h2>
+    <section class="char-info">
+        <h2>ナヒーダの情報</h2>
+        <div class="info-grid-2">
+            <div class="info-item-2"><span>元素：</span>草</div>
+            <div class="info-item-2"><span>武器：</span>法器</div>
+            <div class="info-item-2"><span>モチーフ武器：</span>〇〇〇〇</div>
+            <div class="info-item-2"><span>入手方法：</span>限定ガチャ</div>
+            <div class="info-item-2"><span>声優：</span>〇〇〇〇</div>
+            <div class="info-item-2"><span>誕生日：</span>12月18日</div>
+            <div class="info-item-2"><span>オリジナル料理：</span>〇〇〇〇</div>
+        </div>
+    </section>
 
-            <table>
-                <tr>
-                    <th>Lv</th>
-                    <th>HP</th>
-                    <th>攻撃力</th>
-                    <th>防御力</th>
-                </tr>
-                <tr>
-                    <td>80突破</td>
-                    <td>13662</td>
-                    <td>194</td>
-                    <td>536</td>
-                </tr>
-                <tr>
-                    <td>90</td>
-                    <td>14695</td>
-                    <td>209</td>
-                    <td>576</td>
-                </tr>
-            </table>
-        </section>
+    <section class="char-status">
+        <h2>ステータス</h2>
+        <table>
+            <tr><th>Lv</th><th>HP</th><th>攻撃力</th><th>防御力</th></tr>
+            <tr><td>80突破</td><td>13662</td><td>194</td><td>536</td></tr>
+            <tr><td>90</td><td>14695</td><td>209</td><td>576</td></tr>
+        </table>
+    </section>
 
-    </main>
+</div>
+
+<!-- スカーク -->
+<div class="char-block cryo">
+
+    <section class="char-visual">
+        <img class="char-width"
+             src="https://img.game8.jp/11353338/8579ae45b190d6a374fdedcdf4a8a63e.png/original"
+             alt="キャラ画像">
+    </section>
+
+    <section class="char-info">
+        <h2>スカーク（氷元素Ver.）の情報</h2>
+        <div class="info-grid-2">
+            <div class="info-item-2"><span>元素：</span>氷</div>
+            <div class="info-item-2"><span>武器：</span>法器</div>
+            <div class="info-item-2"><span>モチーフ武器：</span>トゥライトゥーラの記憶</div>
+            <div class="info-item-2"><span>入手方法：</span>限定ガチャ</div>
+            <div class="info-item-2"><span>声優：</span>柿原徹也</div>
+            <div class="info-item-2"><span>誕生日：</span>1月3日</div>
+            <div class="info-item-2"><span>オリジナル料理：</span>〇〇〇〇</div>
+        </div>
+    </section>
+
+    <section class="char-status">
+        <h2>ステータス</h2>
+        <table>
+            <tr><th>Lv</th><th>HP</th><th>攻撃力</th><th>防御力</th></tr>
+            <tr><td>80突破</td><td>10529</td><td>318</td><td>630</td></tr>
+            <tr><td>90</td><td>11340</td><td>326</td><td>667</td></tr>
+        </table>
+    </section>
+
+</div>
 
 </body>
 </html>
