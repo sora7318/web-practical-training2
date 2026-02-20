@@ -156,13 +156,24 @@ a {
   
 }
 
+/* このページだけハンバーガーメニューを黒にする */
+.body-2 #navi {
+    color: #000;
+}
+
+/* 閉じるボタンも黒にしたい場合 */
+.body-2 #close {
+    color: #000;
+}
+
 
 /* 「三」ボタン */
 #navi {
-  font-size: 28px;
+  font-size: 30px;
   cursor: pointer;
   user-select: none;
   padding: 10px;
+  color: white;
 }
 
 /* メニュー（初期は左に隠す） */
@@ -233,11 +244,11 @@ a {
 /* =========================
    全体の設定
 ========================= */
+
 .body-2 {
-    background: #f4f6fa;
-    font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
-    color: #333;
-    padding-bottom: 50px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
 /* =========================
@@ -284,6 +295,12 @@ a {
     padding-left: 10px;
 }
 
+.char-info-2 h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    border-left: 6px solid #b3d4ff;
+    padding-left: 10px;
+}
 /* =========================
    情報グリッド
 ========================= */
@@ -299,6 +316,10 @@ a {
     color: #2e7d32;
 }
 
+.info-item-3 span {
+    font-weight: bold;
+    color: darkturquoise;
+}
 /* =========================
    ステータス表
 ========================= */
@@ -330,6 +351,7 @@ th {
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    
 }
 
 .wrapper-2 {
@@ -356,9 +378,386 @@ th {
     margin-bottom: 40px;
 }
 
+/* 原神のキャラ紹介画面風「パッ」演出 */
+.Genshin2-pop {
+    opacity: 0;
+    transform: scale(1.25) rotate(3deg);
+    filter: blur(6px);
+    transition:
+        opacity 0.45s ease-out,
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.45s ease-out;
+}
+
+/* 表示される瞬間の状態 */
+.Genshin2-pop.show {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0);
+}
+
+section {
+  background: #f8f9fa;
+  padding: 40px 0;
+}
+
+/* ステータステーブル共通 */
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.status-table th,
+.status-table td {
+    padding: 8px 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --- 元素ごとの色設定 --- */
+
+/* 草（Dendro） */
+.char-block.dendro .status-table th {
+    background: #7ed957;
+    color: #fff;
+}
+.char-block.dendro .status-table td {
+    background: rgba(126, 217, 87, 0.15);
+}
+
+/* 氷（Cryo） */
+.char-block.cryo .status-table th {
+    background: #6ecbff;
+    color: #fff;
+}
+.char-block.cryo .status-table td {
+    background: rgba(110, 203, 255, 0.15);
+}
+
+
+/* キャラ情報テーブル */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.info-table th {
+width: 30%;
+    font-weight: bold;
+}
+
+
+.info-table td {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    text-align: left;
+}
+
+/* 罫線 */
+.info-table th,
+.info-table td {
+border-bottom: none;
+
+}
+
+.info-table tr:last-child th,
+.info-table tr:last-child td {
+    border-bottom: none;
+}
+
+.char-block.dendro .info-table th {
+    background: #7ed957;
+    color: #fff;
+}
+.char-block.dendro .info-table td {
+    background: rgba(126, 217, 87, 0.15);
+}
+
+.char-block.cryo .info-table th {
+    background: #6ecbff;
+    color: #fff;
+}
+.char-block.cryo .info-table td {
+    background: rgba(110, 203, 255, 0.15);
+}
+
+/* 全ページでは宇宙背景を非表示 */
+.stars,
+.stars2,
+.stars3 {
+    display: none;
+}
+
+/* body-2 のページだけ宇宙背景を表示 */
+.body-2 .stars,
+.body-2 .stars2,
+.body-2 .stars3 {
+    display: block;
+}
+
+/* ======== 星空アニメーション背景 ======== */
+.stars, .stars2, .stars3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-repeat: repeat;
+    background-size: contain;
+    z-index: -1;
+}
+
+/* 小さい星 */
+.stars {
+    background-image: radial-gradient(2px 2px at 20px 20px, white, transparent),
+                      radial-gradient(2px 2px at 80px 50px, white, transparent),
+                      radial-gradient(2px 2px at 150px 90px, white, transparent),
+                      radial-gradient(2px 2px at 300px 200px, white, transparent);
+    animation: moveStars 60s linear infinite;
+}
+
+/* 中くらいの星 */
+.stars2 {
+    background-image: radial-gradient(3px 3px at 40px 80px, white, transparent),
+                      radial-gradient(3px 3px at 120px 150px, white, transparent),
+                      radial-gradient(3px 3px at 250px 300px, white, transparent);
+    animation: moveStars 120s linear infinite;
+    opacity: 0.7;
+}
+
+/* 大きい星 */
+.stars3 {
+    background-image: radial-gradient(4px 4px at 100px 200px, white, transparent),
+                      radial-gradient(4px 4px at 300px 400px, white, transparent);
+    animation: moveStars 180s linear infinite;
+    opacity: 0.5;
+}
+
+/* 星がゆっくり流れるアニメーション */
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); }
+}
+
+/* デフォルト（全ページ）は宇宙背景を非表示 */
+.stars,
+.stars2,
+.stars3 {
+    display: none;
+}
+
+/* 宇宙背景を表示したいページだけ（例：body-2） */
+.body-2 .stars,
+.body-2 .stars2,
+.body-2 .stars3 {
+    display: block;
+}
+/* 星空背景（あなたのサイトと同じ構造） */
+.stars, .stars2, .stars3 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: repeat;
+    z-index: -1;
+}
+
+
+/* カードレイアウト */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* カード本体 */
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* ホバーで光る */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(78, 161, 255, 0.6);
+}
+
+/* カード画像 */
+.card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* タイトル */
+.card-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    border-left: 4px solid #4ea1ff;
+    padding-left: 10px;
+}
+
+/* テキスト */
+.card p {
+    line-height: 1.6;
+}
+
+/* スクロールで出現アニメーション */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ゲームアイコン */
+.card-icon {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(78,161,255,0.5);
+    border: 2px solid rgba(255,255,255,0.4);
+}
+
+
+.card.genshin .card-icon {
+    box-shadow: 0 0 20px #7cc7ff;
+}
+.card.starrail .card-icon {
+    box-shadow: 0 0 20px #b38bff;
+}
+.card.wuthering .card-icon {
+    box-shadow: 0 0 20px #6fe7ff;
+}
+
+/* --- 共通カードホバー --- */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- 原神（淡い青） --- */
+.card.genshin:hover {
+    box-shadow: 0 0 25px #7cc7ff;
+    border: 1px solid #7cc7ff;
+}
+
+/* --- 崩壊スターレイル（紫） --- */
+.card.starrail:hover {
+    box-shadow: 0 0 25px #b38bff;
+    border: 1px solid #b38bff;
+}
+
+/* --- 鳴潮（水色） --- */
+.card.wuthering:hover {
+    box-shadow: 0 0 25px #6fe7ff;
+    border: 1px solid #6fe7ff;
+}
+
+.card.genshin .card-icon {
+    box-shadow: 0 0 12px #7cc7ff;
+}
+
+.card.starrail .card-icon {
+    box-shadow: 0 0 12px #b38bff;
+}
+
+.card.wuthering .card-icon {
+    box-shadow: 0 0 12px #6fe7ff;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin: 40px auto 20px;
+    text-align: center;
+    color: #fff;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    width: fit-content;
+    padding-bottom: 5px;
+}
+
+/* ▼ マンガカード専用コンテナ */
+.manga-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 20px auto 60px;
+    padding: 0 20px;
+}
+
+/* ▼ マンガカード本体 */
+.manga-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 15px rgba(255, 200, 200, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* ▼ ホバーでふわっと光る（ゲームと違う色） */
+.manga-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 180, 180, 0.7);
+    border: 1px solid rgba(255, 180, 180, 0.7);
+}
+
+/* ▼ マンガ画像（大きめ） */
+.manga-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 15px;
+
+}
+
+/* ▼ タイトル */
+.manga-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    border-left: 4px solid rgba(255, 180, 180, 0.8);
+    padding-left: 10px;
+}
+
+/* ▼ テキスト */
+.manga-card p {
+    line-height: 1.6;
+}
 
 /* =========================
-   スマホ対応
+スマホ対応
 ========================= */
 @media (max-width: 600px) {
     .info-grid-2 {
@@ -369,6 +768,14 @@ th {
         font-size: 22px;
     }
 }
+
+.card {
+  border-radius: 20px;
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
 
 
 @media  (max-width: 600px){
