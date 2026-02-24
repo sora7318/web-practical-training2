@@ -735,12 +735,13 @@ border-bottom: none;
 
 /* ▼ マンガ画像（大きめ） */
 .manga-img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
+    width: 100%;          /* カード幅いっぱいに表示 */
+    height: auto;         /* 画像の縦横比をそのまま維持 */
+    max-height: 350px;    /* 大きすぎる画像を防ぐ（調整可） */
+    object-fit: contain;  /* 画像全体が必ず写る */
     border-radius: 12px;
     margin-bottom: 15px;
-
+    background: #000;     /* 余白が出る場合の背景（黒で引き締め） */
 }
 
 /* ▼ タイトル */
@@ -755,6 +756,43 @@ border-bottom: none;
 .manga-card p {
     line-height: 1.6;
 }
+
+/* ▼ タイトル帯（マンガ専用） */
+.manga-title-band {
+    background: rgba(255, 180, 180, 0.9); /* 柔らかいピンク帯 */
+    padding: 8px 12px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 150, 150, 0.5);
+}
+
+.manga-title-band span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.Btn-3 {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid #333;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
 
 /* =========================
 スマホ対応
@@ -774,6 +812,181 @@ border-bottom: none;
   background: #ffffffcc;
   backdrop-filter: blur(6px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ▼ 鳴潮背景（body-2専用） */
+.body-2 {
+    min-height: 100vh;
+    background-image: url("../img/wuthering-bg.jpg"); /* ←好きな背景画像に変更 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* PCでログイン画面っぽく固定 */
+}
+
+/* ▼ 背景を少し暗くしてカードを見やすくする */
+.body-2::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.body-2 {
+    min-height: 100vh;
+    background-image: url("../img/スクリーンショット-2024-05-25-160955.jpg");
+    background-size: 110% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: bgMove 30s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove {
+    0% { background-position: 50% 50%; }
+    100% { background-position: 55% 45%; }
+}
+
+.food-card {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.food-item {
+    margin-bottom: 25px;
+}
+
+.food-item img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.food-item p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+
+
+.anime-card {
+    width: 90%;
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.anime-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.anime-title {
+    text-align: center;
+    margin-top: 70px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.anime-card p {
+    color: #eee;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* タイトル */
+.anime-title {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 28px;
+    color: #fff;
+}
+
+/* カード */
+.anime-card {
+    width: 90%;
+    max-width: 350px;
+    margin: 25px auto;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    text-align: center;
+    color: #fff;
+}
+
+.anime-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.anime-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 戻るボタン */
+
+
+body {
+    overflow-y: auto;
+}
+
+/* 星の粒子 */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at center,
+      rgba(255,255,255,0.4) 0%,
+      rgba(120,150,255,0.25) 30%,
+      rgba(40,60,120,0.6) 60%,
+      rgba(10,20,40,1) 100%);
+  background-attachment: fixed;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(120deg, #1e3c72, #2a5298, #1e3c72);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 

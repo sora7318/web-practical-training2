@@ -12,38 +12,24 @@
 
 <body class="body-2">
 
- 
+ <div class="wuwa-bg"></div>
+ <div class="wuwa-overlay"></div>
+ <div class="wuwa-light"></div>
 
-<header id="header" class="wrapper">
-    <div class="nav" id="navi">三</div>
-
-    <nav class="menu" id="menu">
-        <div class="close-Btn" id="close">x</div>
-        <li><a href="about.html">about</a></li>
-        <li><a href="company.html">company</a></li>
-        <li><a href="products.html">products</a></li>
-        <li><a href="products2.html">products2</a></li>
-        <li><a href="contact.html">contact</a></li>
-    </nav>
+<button class="Btn-3">X</button>
 
 <script>
-    const navi = document.getElementById('navi');
-    const menu = document.getElementById('menu');
-    const closeBtn = document.getElementById('close');
+    const backBtn = document.querySelector('.Btn-3');
 
-    navi.addEventListener('click', () => {
-    menu.classList.add('active');
-    });
-
-    closeBtn.addEventListener('click', () => {
-    menu.classList.remove('active');
+    backBtn.addEventListener('click', () => {
+        history.back();
     });
 </script>
-</header>
 
-<h1>趣味一覧</h1>
+
 
 <!-- ▼ ゲームカードまとめ -->
+
 <h2 class="section-title">🎮 ゲーム</h2>
 <div class="card-container">
 
@@ -69,22 +55,21 @@
 
 
 <!-- ▼ マンガカードまとめ -->
-<<h2 class="section-title">📚 マンガ</h2>
+<h2 class="section-title">マンガ</h2>
 
-<div class="card-container manga-container">
-
-    <div class="manga-card fade-in">
-        <img src="img/k9NkUeQ93M9hPhrRh3M10ndGGZ8SFJbR0oGE0j8PA1o7NOJuVmvPwOzRv6BVTdb9.jpg" alt="漫画" class="manga-img">
-        <div class="manga-title">転生したらスライムだった件</div>
-        <p>サラリーマンが異世界に転生。</p>
+<div class="manga-card fade-in">
+    <div class="manga-title-band">
+        <span>転生したらスライムだった件</span>
     </div>
+    <img src="img/k9NkUeQ93M9hPhrRh3M10ndGGZ8SFJbR0oGE0j8PA1o7NOJuVmvPwOzRv6BVTdb9.jpg" alt="漫画" class="manga-img">
+</div>
 
-
-    <div class="manga-card fade-in">
-        <img src="img/GihzMcNaoAAYv_h.jpg" alt="漫画" class="manga-img">
-        <div class="manga-title">和歌ちゃんは今日もあざとい</div>
-        <p>恋愛漫画　彼女を作ろうと意気込む大学1年生・友哉。同じサークルの桜庭和歌と親しくなるものの、勇気が出ずなかなか第一歩を踏み出せずにいた。</p>
+<div class="manga-card fade-in">
+    <div class="manga-title-band">
+        <span>和歌ちゃんは今日もあざとい</span>
     </div>
+<img src="img/GihzMcNaoAAYv_h.jpg" alt="漫画" class="manga-img">
+    <p>恋愛漫画　彼女を作ろうと意気込む大学1年生・友哉。同じサークルの桜庭和歌と親しくなるものの、勇気が出ずなかなか第一歩を踏み出せずにいた。</p>
 </div>
 
 

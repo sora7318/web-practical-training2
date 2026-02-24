@@ -16,17 +16,15 @@
 <div class="stars2"></div>
 <div class="stars3"></div>
 
-<header id="header" class="wrapper">
-    <div class="nav" id="navi">三</div>
+<button class="Btn-3">X</button>
 
-    <nav class="menu" id="menu">
-        <div class="close-Btn" id="close">x</div>
-        <li><a href="about.html">about</a></li>
-        <li><a href="company.html">company</a></li>
-        <li><a href="products.html">products</a></li>
-        <li><a href="products2.html">products2</a></li>
-        <li><a href="contact.html">contact</a></li>
-    </nav>
+<script>
+    const backBtn = document.querySelector('.Btn-3');
+
+    backBtn.addEventListener('click', () => {
+        history.back();
+    });
+</script>
 
 <script>
     const navi = document.getElementById('navi');
